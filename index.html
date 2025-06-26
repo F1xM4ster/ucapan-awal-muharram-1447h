@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Tahun Baru Hijrah!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Gaya Umum */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 100%); /* Gradasi hijau */
+            color: #fff;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow: hidden; /* Sembunyikan overflow untuk efek latar belakang */
+        }
+
+        /* Container untuk Konten */
+        .container {
+            background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 90%;
+            animation: fadeIn 1.5s ease-out; /* Animasi muncul */
+            position: relative;
+            z-index: 1; /* Pastikan konten di atas bintang */
+        }
+
+        /* Judul Utama */
+        h1 {
+            font-family: 'Cairo', sans-serif;
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #FFEB3B; /* Kuning cerah */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+            animation: pulse 2s infinite; /* Animasi berkedip */
+        }
+
+        /* Sub-judul/Tanggal */
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            color: #B2FF59; /* Hijau muda */
+        }
+
+        /* Paragraf Ucapan */
+        p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        /* Pengirim Ucapan */
+        .sender {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #E0F7FA; /* Biru muda */
+        }
+
+        /* Efek Bintang Latar Belakang */
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0; /* Pastikan di bawah konten */
+        }
+
+        .star {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle 5s infinite ease-in-out;
+        }
+
+        /* Animasi CSS */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Media Queries untuk Responsivitas */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            p {
+                font-size: 1em;
+            }
+            .container {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+            p {
+                font-size: 0.9em;
+            }
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars-container"></div>
+    <div class="container">
+        <h1>Selamat Tahun Baru Hijrah 1447H!</h1>
+        <h2>Awal Muharram 2025</h2>
+        <p>
+            Dengan ingatan suci dan harapan baru, kami mengucapkan Selamat Tahun Baru Hijrah 1447H.
+            Semoga tahun ini membawa keberkatan, kemajuan, keamanan, dan kebahagiaan yang melimpah ruah
+            buat kita semua. Marilah kita jadikan tahun baru ini sebagai titik permulaan
+            untuk menjadi insan yang lebih baik dan bermanfaat bagi agama, bangsa, dan negara.
+            Semoga Allah SWT senantiasa merahmati dan melindungi kita. Amin.
+        </p>
+        <p class="sender">
+            Ikhlas daripada:<br>
+            [Nama Anda/Organisasi Anda]
+        </p>
+    </div>
+
+    <script>
+        // JavaScript untuk membuat efek bintang di latar belakang
+        const starsContainer = document.getElementById('stars-container');
+        const numStars = 100; // Jumlah bintang
+
+        for (let i = 0; i < numStars; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.width = `${Math.random() * 3 + 1}px`; // Ukuran bintang
+            star.style.height = star.style.width;
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.animationDelay = `${Math.random() * 5}s`; // Delay animasi acak
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>
