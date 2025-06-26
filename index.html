@@ -47,10 +47,10 @@
             color: #FFD700; /* Emas cerah */
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
             animation: neonPulse 2s infinite alternate; /* Efek neon berkedip */
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out; /* Transisi untuk hover */
         }
         h1:hover {
-            transform: scale(1.02) rotateZ(1deg);
+            transform: scale(1.02) rotateZ(1deg); /* Sedikit membesar dan berputar */
         }
 
         /* Sub-judul/Tanggal */
@@ -110,6 +110,7 @@
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
             transform: translateY(-2px);
         }
+
 
         /* Pengirim Ucapan */
         .sender {
@@ -230,7 +231,8 @@
             width: 180px;
             height: 180px;
             border-radius: 50%;
-            box-shadow: 50px 20px 0 0 #FFEB3B; /* Bentuk bulan sabit */
+            /* PEMBETULAN: Mengubah nilai box-shadow agar bulan sabit menghadap ke kanan */
+            box-shadow: -50px 20px 0 0 #FFEB3B; /* Bentuk bulan sabit */
             top: 10%;
             left: 5%;
             transform: rotate(-30deg);
@@ -260,7 +262,7 @@
             .container { padding: 30px; }
             .action-button { padding: 12px 25px; font-size: 1.1em; }
             .button-group { flex-direction: column; }
-            .crescent { width: 120px; height: 120px; box-shadow: 30px 15px 0 0 #FFEB3B; top: 5%; left: 2%; }
+            .crescent { width: 120px; height: 120px; box-shadow: -30px 15px 0 0 #FFEB3B; top: 5%; left: 2%; } /* Pembetulan untuk responsif */
             .star-1 { width: 30px; height: 30px; }
             .star-2 { width: 25px; height: 25px; }
             .star-3 { width: 20px; height: 20px; }
@@ -274,7 +276,7 @@
             .greeting-text { font-size: 0.9em; }
             .container { padding: 20px; }
             .action-button { padding: 10px 20px; font-size: 1em; }
-            .crescent { width: 80px; height: 80px; box-shadow: 20px 10px 0 0 #FFEB3B; top: 3%; left: -5%; }
+            .crescent { width: 80px; height: 80px; box-shadow: -20px 10px 0 0 #FFEB3B; top: 3%; left: -5%; } /* Pembetulan untuk responsif */
             .star-1 { width: 25px; height: 25px; }
             .star-2 { width: 20px; height: 20px; }
             .star-3 { width: 15px; height: 15px; }
