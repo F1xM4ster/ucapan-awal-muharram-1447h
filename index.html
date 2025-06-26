@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selamat Tahun Baru Hijrah!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Comfortaa:wght@400;700&family=Noto+Naskh+Arabic:wght@700&display=swap" rel="stylesheet">
     <style>
         /* Gaya Umum */
         body {
             font-family: 'Comfortaa', cursive;
-            background: linear-gradient(135deg, #1A2980 0%, #26D0CE 100%);
+            background: linear-gradient(135deg, #1A2980 0%, #26D0CE 100%); /* Gradien biru-turkis */
             color: #fff;
             margin: 0;
             display: flex;
@@ -17,21 +17,21 @@
             align-items: center;
             min-height: 100vh;
             text-align: center;
-            overflow: hidden;
-            position: relative;
+            overflow: hidden; /* Sembunyikan overflow untuk efek latar belakang */
+            position: relative; /* Penting untuk posisi salju */
         }
 
         /* Container untuk Konten */
         .container {
-            background-color: rgba(0, 0, 0, 0.4);
+            background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
             padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            border-radius: 20px; /* Sudut membulat */
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5); /* Bayangan lebih dalam */
             max-width: 800px;
             width: 90%;
-            animation: slideInUp 1.2s ease-out forwards;
+            animation: slideInUp 1.2s ease-out forwards; /* Animasi muncul */
             position: relative;
-            z-index: 10;
+            z-index: 10; /* Pastikan konten di atas salju dan elemen latar belakang */
             transform: translateY(50px);
             opacity: 0;
             display: flex;
@@ -44,52 +44,53 @@
             font-family: 'Amatic SC', cursive;
             font-size: 4em;
             margin-bottom: 15px;
-            color: #FFD700;
+            color: #FFD700; /* Emas cerah */
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
-            animation: neonPulse 2s infinite alternate;
-            transition: transform 0.3s ease-in-out; /* Transisi untuk hover */
+            animation: neonPulse 2s infinite alternate; /* Efek neon berkedip */
+            transition: transform 0.3s ease-in-out;
         }
         h1:hover {
-            transform: scale(1.02) rotateZ(1deg); /* Sedikit membesar dan berputar */
+            transform: scale(1.02) rotateZ(1deg);
         }
 
         /* Sub-judul/Tanggal */
         h2 {
             font-size: 2em;
             margin-bottom: 25px;
-            color: #E0FFFF;
+            color: #E0FFFF; /* Aqua terang */
             opacity: 0;
             animation: fadeIn 1s ease-out 0.8s forwards;
-            transition: transform 0.3s ease-in-out; /* Transisi untuk hover */
+            transition: transform 0.3s ease-in-out;
         }
         h2:hover {
-            transform: translateY(-3px); /* Sedikit bergerak ke atas */
+            transform: translateY(-3px);
         }
 
-        /* Countdown Timer */
-        #countdown {
-            font-family: 'Comfortaa', cursive;
-            font-size: 2.2em;
-            font-weight: bold;
-            color: #FFEB3B;
-            margin-top: 20px;
-            margin-bottom: 30px;
-            background-color: rgba(0, 0, 0, 0.3);
-            padding: 15px 25px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            animation: fadeIn 1s ease-out 2.5s forwards;
+        /* Elemen Jawi/Arab */
+        .arabic-text {
+            font-family: 'Noto Naskh Arabic', serif; /* Font Arabic yang indah */
+            font-size: 2.8em; /* Ukuran besar */
+            color: #B2FF59; /* Hijau muda */
+            margin-bottom: 20px;
             opacity: 0;
-            transition: all 0.3s ease-in-out; /* Transisi untuk hover */
+            animation: fadeIn 1s ease-out 1.2s forwards;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease-in-out;
+            line-height: 1.2;
         }
-        #countdown:hover {
-            background-color: rgba(0, 0, 0, 0.5); /* Latar belakang lebih gelap */
-            transform: scale(1.01); /* Sedikit membesar */
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        .arabic-text:hover {
+            transform: scale(1.02);
+            color: #CCFF90; /* Warna lebih terang saat hover */
         }
-        #countdown span {
-            display: inline-block;
-            min-width: 60px;
+        .arabic-sub-text { /* Untuk selawat */
+            font-family: 'Noto Naskh Arabic', serif;
+            font-size: 1.5em;
+            color: #ADD8E6; /* Light Blue */
+            margin-top: -10px; /* Sedikit naik ke atas */
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1.5s forwards;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }
 
         /* Paragraf Ucapan */
@@ -99,17 +100,16 @@
             margin-bottom: 30px;
             color: #F0F8FF;
             opacity: 0;
-            animation: fadeIn 1s ease-out 1.2s forwards;
+            animation: fadeIn 1s ease-out 1.8s forwards; /* Delay disesuaikan */
             text-align: justify;
             padding: 0 15px;
-            transition: all 0.3s ease-in-out; /* Transisi untuk hover */
+            transition: all 0.3s ease-in-out;
         }
         .greeting-text:hover {
-            color: #FFFFFF; /* Warna teks lebih putih */
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Bayangan teks lembut */
-            transform: translateY(-2px); /* Sedikit bergerak ke atas */
+            color: #FFFFFF;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
         }
-
 
         /* Pengirim Ucapan */
         .sender {
@@ -117,13 +117,13 @@
             font-weight: 700;
             color: #B0E0E6;
             opacity: 0;
-            animation: fadeIn 1s ease-out 1.6s forwards;
+            animation: fadeIn 1s ease-out 2.1s forwards; /* Delay disesuaikan */
             margin-bottom: 30px;
-            transition: all 0.3s ease-in-out; /* Transisi untuk hover */
+            transition: all 0.3s ease-in-out;
         }
         .sender:hover {
-            color: #FFFFFF; /* Warna teks lebih putih */
-            transform: translateX(5px); /* Sedikit bergerak ke kanan */
+            color: #FFFFFF;
+            transform: translateX(5px);
         }
 
         /* Container Tombol */
@@ -150,7 +150,7 @@
             transition: all 0.3s ease;
             outline: none;
             opacity: 0;
-            animation: fadeIn 1s ease-out 2s forwards;
+            animation: fadeIn 1s ease-out 2.4s forwards; /* Delay disesuaikan */
         }
 
         .action-button:hover {
@@ -176,8 +176,8 @@
             background-color: #388e3c;
         }
 
-        /* Efek Partikel Latar Belakang */
-        .particles {
+        /* Efek Salju Latar Belakang */
+        .snowflake-container {
             position: absolute;
             top: 0;
             left: 0;
@@ -187,11 +187,11 @@
             z-index: 0;
         }
 
-        .particle {
+        .snowflake {
             position: absolute;
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.8);
             border-radius: 50%;
-            animation: floatAndFade 15s infinite ease-in-out;
+            animation: snowfall linear infinite;
         }
 
         /* Animasi CSS */
@@ -207,43 +207,99 @@
             0% { text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFD700; }
             100% { text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFA500; }
         }
-        @keyframes floatAndFade {
-            0% { transform: translateY(0) translateX(0) scale(0); opacity: 0; }
-            20% { opacity: 0.8; transform: scale(1); }
-            100% { transform: translateY(-100vh) translateX(50px) scale(0.2); opacity: 0; }
+
+        @keyframes snowfall {
+            0% { transform: translateY(-100%) translateX(0); opacity: 0; }
+            20% { opacity: 1; }
+            100% { transform: translateY(100vh) translateX(50px); opacity: 0; }
         }
+
+        /* Elemen Bulan dan Bintang */
+        .islamic-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1; /* Di bawah konten, di atas salju */
+            pointer-events: none;
+        }
+
+        .crescent {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            box-shadow: 50px 20px 0 0 #FFEB3B; /* Bentuk bulan sabit */
+            top: 10%;
+            left: 5%;
+            transform: rotate(-30deg);
+            opacity: 0.2;
+            animation: fadeIn 2s forwards;
+        }
+
+        .star-islamic {
+            position: absolute;
+            background: #FFEB3B;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            opacity: 0.2;
+            animation: fadeIn 2s forwards;
+        }
+        .star-1 { width: 40px; height: 40px; top: 15%; right: 10%; animation-delay: 0.5s; }
+        .star-2 { width: 30px; height: 30px; bottom: 10%; left: 15%; transform: rotate(15deg); animation-delay: 1s; }
+        .star-3 { width: 25px; height: 25px; top: 30%; left: 20%; animation-delay: 1.5s; }
+
 
         /* Media Queries untuk Responsivitas */
         @media (max-width: 768px) {
             h1 { font-size: 3em; }
             h2 { font-size: 1.6em; }
+            .arabic-text { font-size: 2.2em; }
+            .arabic-sub-text { font-size: 1.3em; }
             .greeting-text { font-size: 1em; }
             .container { padding: 30px; }
             .action-button { padding: 12px 25px; font-size: 1.1em; }
-            #countdown { font-size: 1.8em; padding: 10px 15px; }
-            #countdown span { min-width: 45px; }
             .button-group { flex-direction: column; }
+            .crescent { width: 120px; height: 120px; box-shadow: 30px 15px 0 0 #FFEB3B; top: 5%; left: 2%; }
+            .star-1 { width: 30px; height: 30px; }
+            .star-2 { width: 25px; height: 25px; }
+            .star-3 { width: 20px; height: 20px; }
         }
 
         @media (max-width: 480px) {
             h1 { font-size: 2.5em; }
             h2 { font-size: 1.4em; }
+            .arabic-text { font-size: 1.8em; }
+            .arabic-sub-text { font-size: 1.1em; }
             .greeting-text { font-size: 0.9em; }
             .container { padding: 20px; }
             .action-button { padding: 10px 20px; font-size: 1em; }
-            #countdown { font-size: 1.5em; padding: 8px 10px; }
-            #countdown span { min-width: 35px; }
+            .crescent { width: 80px; height: 80px; box-shadow: 20px 10px 0 0 #FFEB3B; top: 3%; left: -5%; }
+            .star-1 { width: 25px; height: 25px; }
+            .star-2 { width: 20px; height: 20px; }
+            .star-3 { width: 15px; height: 15px; }
         }
     </style>
 </head>
 <body>
-    <div class="particles" id="particles-container"></div>
+    <div class="islamic-shapes">
+        <div class="crescent"></div>
+        <div class="star-islamic star-1"></div>
+        <div class="star-islamic star-2"></div>
+        <div class="star-islamic star-3"></div>
+    </div>
+
+    <div class="snowflake-container" id="snowflake-container"></div>
+
     <div class="container">
         <h1>Selamat Tahun Baru Hijrah 1447H!</h1>
         <h2>Awal Muharram 2025</h2>
 
-        <div id="countdown">
-            <span id="days"></span> Hari <span id="hours"></span> Jam <span id="minutes"></span> Minit <span id="seconds"></span> Saat
+        <div class="arabic-text">
+            سنة هجرية سعيدة
+        </div>
+        <div class="arabic-sub-text">
+            صَلَّى اللّٰهُ عَلَى مُحَمَّد
         </div>
 
         <p class="greeting-text" id="greetingText">
@@ -264,21 +320,20 @@
     </div>
 
     <script>
-        // --- JavaScript untuk Efek Partikel Latar Belakang ---
-        const particlesContainer = document.getElementById('particles-container');
-        const numParticles = 80;
+        // --- JavaScript untuk Efek Salju Latar Belakang ---
+        const snowflakeContainer = document.getElementById('snowflake-container');
+        const numSnowflakes = 100; // Jumlah butiran salju
 
-        for (let i = 0; i < numParticles; i++) {
-            const particle = document.createElement('div');
-            particle.classList.add('particle');
-            const size = Math.random() * 8 + 2;
-            particle.style.width = `${size}px`;
-            particle.style.height = `${size}px`;
-            particle.style.left = `${Math.random() * 100}%`;
-            particle.style.top = `${Math.random() * 100}%`;
-            particle.style.animationDuration = `${Math.random() * 10 + 5}s`;
-            particle.style.animationDelay = `${Math.random() * -15}s`;
-            particlesContainer.appendChild(particle);
+        for (let i = 0; i < numSnowflakes; i++) {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            const size = Math.random() * 5 + 2; // Ukuran salju (2px - 7px)
+            snowflake.style.width = `${size}px`;
+            snowflake.style.height = `${size}px`;
+            snowflake.style.left = `${Math.random() * 100}%`; // Posisi horizontal acak
+            snowflake.style.animationDuration = `${Math.random() * 15 + 10}s`; // Durasi animasi (10s - 25s)
+            snowflake.style.animationDelay = `${Math.random() * -25}s`; // Delay animasi negatif untuk efek terus-menerus
+            snowflakeContainer.appendChild(snowflake);
         }
 
         // --- JavaScript untuk Fungsionalitas Tombol "Salin Ucapan" ---
@@ -315,11 +370,11 @@
                         text: shareText,
                         url: currentUrl
                     });
-                } /*catch (error) { // commented out to prevent double alert on user cancel
+                } catch (error) {
                     if (error.name !== 'AbortError') {
                         alert('Gagal berkongsi pautan. Anda boleh salin URL ini: ' + currentUrl);
                     }
-                }*/
+                }
             } else {
                 try {
                     await navigator.clipboard.writeText(currentUrl);
@@ -329,45 +384,6 @@
                 }
             }
         });
-
-        // --- JavaScript untuk Penghitung Mundur Awal Muharram ---
-        const countdownElement = document.getElementById('countdown');
-        const daysElement = document.getElementById('days');
-        const hoursElement = document.getElementById('hours');
-        const minutesElement = document.getElementById('minutes');
-        const secondsElement = document.getElementById('seconds');
-
-        // Tetapkan tanggal Awal Muharram 1447H.
-        // Berdasarkan kalender Masehi, Awal Muharram 1447H diperkirakan jatuh pada 26 Juli 2025.
-        // Kita akan set target ke 26 Juli 2025, pukul 00:00:00 (tengah malam).
-        const targetDate = new Date('July 26, 2025 00:00:00').getTime();
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = targetDate - now;
-
-            if (distance < 0) {
-                countdownElement.innerHTML = "Awal Muharram telah tiba!";
-                clearInterval(countdownInterval);
-                return;
-            }
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            daysElement.innerHTML = days;
-            hoursElement.innerHTML = hours;
-            minutesElement.innerHTML = minutes;
-            secondsElement.innerHTML = seconds;
-        }
-
-        // Perbarui countdown setiap 1 detik
-        const countdownInterval = setInterval(updateCountdown, 1000);
-
-        // Panggil pertama kali untuk menampilkan langsung tanpa menunggu 1 detik
-        updateCountdown();
     </script>
 </body>
 </html>
